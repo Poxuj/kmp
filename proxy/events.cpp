@@ -12,13 +12,13 @@
 #include <time.h> /* time */
 
    std::string paket =
-   "quot;add_label_with_icon|big|5The KMProxy Gazette``|left|5016|"
-    "quot;\nadd_spacer|small|"
-    "quot;\nadd_textbox|wApril 16th: `5Proxy made by ModizX#4309 &amp; KiNG&#39;#7409|left|"
-    "quot;\nadd_spacer|small|"
-    "quot;\nadd_quick_exit|"
-    "quot;\nset_survey_enabled|1"
-    "quot;\nend_dialog|gazette||OK|"
+   "add_label_with_icon|big|5The KMProxy Gazette``|left|5016|"
+    "\nadd_spacer|small|"
+    "\nadd_textbox|wApril 16th: `5Proxy made by ModizX#4309; KiNG&#39;#7409|left|"
+    "\nadd_spacer|small|"
+    "nadd_quick_exit|"
+    "\nset_survey_enabled|1"
+    "\nend_dialog|gazette||OK|"
 
 bool events::out::variantlist(gameupdatepacket_t* packet) {
     variantlist_t varlist{};
@@ -379,9 +379,12 @@ bool events::out::generictext(std::string packet) {
                 "\nadd_textbox|`b/door (teleport to id door (you must know the id door)) |left|2480|"
                 "\nadd_textbox|`b/pinfo (Proxy information) |left|2480|"
                 "\nadd_textbox|`b/autopull (auto pull when people enter world) |left|2480|"
-                "\nadd_spacer|small|\n\nadd_url_button||`$KiNG Github``|NOFLAGS|https://github.com/Poxuj|Open link?|0|0|"
-                "\nadd_spacer|small|\n\nadd_url_button||`$FakeModz Github``|NOFLAGS|https:/github.com/FakeModz|Open link?|0|0|"
-                " \nadd_spacer|small|\n\nadd_url_button||`$Ama Github``|NOFLAGS|https:/github.com/ama6nen|Open link?|0|0|&quot;
+                "\nadd_spacer|small|"
+                " \nadd_url_button||`$KiNG Github``|NOFLAGS|https://github.com/Poxuj|Open link?|0|0|
+                "\nadd_spacer|small|
+	        "\nadd_url_button||`$FakeModz Github``|NOFLAGS|https:/github.com/FakeModz|Open link?|0|0|"
+                " \nadd_spacer|small|
+                " \nadd_url_button||`$Ama Github``|NOFLAGS|https:/github.com/ama6nen|Open link?|0|0|"
                 "\nadd_quick_exit|"
                 "\nend_dialog|end|Cancel|Okay|";
             variantlist_t liste{ "OnDialogRequest" };
