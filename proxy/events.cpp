@@ -237,7 +237,7 @@ bool events::out::generictext(std::string packet) {
                   
                 }
             }
-} else if (find_command(chat, "killall")) {
+} else if (find_command(chat, "kickall")) {
             std::string username = chat.substr(6);
             for (auto& player : g_server->m_world.players) {
                 auto name_2 = player.name.substr(2); //remove color
@@ -365,7 +365,7 @@ bool events::out::generictext(std::string packet) {
                 "\nadd_textbox|`2/ft (fast trash) |left|2480|"
                 "\nadd_textbox|`2/fd (fast drop) |left|2480|"
                 "\nadd_textbox|`2/wrenchmsg (Auto Msg when wrench people) |left|2480|"
-                "\nadd_textbox|`2/setmsg (Costum Text for Wrenchmsg and wrenchspam) |left|2480|"
+                "\nadd_textbox|`2/setmsg (custom Text for Wrenchmsg and wrenchspam) |left|2480|"
                 "\nadd_textbox|`2/setcountry (bug) |left|2480|"
                 "\nadd_textbox|`2/msgall (not really worked because spam detected) |left|2480|"
                 "\nadd_textbox|`2/wrenchspam (wrench spam like wrench msg do/setspam for set text) |left|2480|"
@@ -373,8 +373,9 @@ bool events::out::generictext(std::string packet) {
                 "\nadd_textbox|`2/door (teleport to id door (you must know the id door)) |left|2480|"
                 "\nadd_textbox|`2/pinfo (Proxy information) |left|2480|"
                 "\nadd_textbox|`2/autopull (auto pull when people enter world) |left|2480|"
-                "\nadd_spacer|small|\n\nadd_url_button||`$YouTube``|NOFLAGS|https://youtube.com/c/FakeModzGT|Open link?|0|0|"
-                "\nadd_spacer|small|\n\nadd_url_button||`$Discord``|NOFLAGS|https://discord.com/invite/YfnMbjWjpP|Open link?|0|0|"
+                "\nadd_spacer|small|\n\nadd_url_button||`$King Github``|NOFLAGS|https://github.com/Poxuj|Open link?|0|0|"
+                "\nadd_spacer|small|\n\nadd_url_button||`$FakeModz Github``|NOFLAGS|https://github.com/FakeModz|0|0|"
+	        "\nadd_spacer|small|\n\nadd_url_button||`$Ama Github``|NOFLAGS|https://github.com/ama6nen|0|0|"
                 "\nadd_quick_exit|"
                 "\nend_dialog|end|Cancel|Okay|";
             variantlist_t liste{ "OnDialogRequest" };
