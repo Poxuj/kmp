@@ -4,7 +4,7 @@ Credits :
 
 https://github.com/ama6nen
 
-https://github.com/FakeModzYT
+https://github.com/FakeModz
 
 https://github.com/Poxuj
 
