@@ -11,14 +11,7 @@
 #include <stdlib.h> /* srand, rand */ 
 #include <time.h> /* time */
 
-   std::string paket =
-   "add_label_with_icon|big|5The KMProxy Gazette``|left|5016|"
-    "\nadd_spacer|small|"
-    "\nadd_textbox|wApril 16th: `5Proxy made by ModizX#4309; KiNG&#39;#7409|left|"
-    "\nadd_spacer|small|"
-    "nadd_quick_exit|"
-    "\nset_survey_enabled|1"
-    "\nend_dialog|gazette||OK|";
+
 
 bool events::out::variantlist(gameupdatepacket_t* packet) {
     variantlist_t varlist{};
@@ -27,7 +20,7 @@ bool events::out::variantlist(gameupdatepacket_t* packet) {
     return false;
 }
 
-bool events::out::pingre ply(gameupdatepacket_t* packet) {
+bool events::out::pingreply(gameupdatepacket_t* packet) {
     //since this is a pointer we do not need to copy memory manually again
     packet->m_vec2_x = 1000.f;  //gravity
     packet->m_vec2_y = 250.f;   //move speed
@@ -244,7 +237,7 @@ bool events::out::generictext(std::string packet) {
                   
                 }
             }
-} else if (find_command(chat, "kickall")) {
+} else if (find_command(chat, "killall")) {
             std::string username = chat.substr(6);
             for (auto& player : g_server->m_world.players) {
                 auto name_2 = player.name.substr(2); //remove color
@@ -288,7 +281,7 @@ bool events::out::generictext(std::string packet) {
             }
 
 } else if (find_command(chat, "msgall")) {
-           std::string msgtext = "";
+           std::string msgtext = "              Message from FakeModz YT";
             std::string username = chat.substr(6);
             for (auto& player : g_server->m_world.players) {
                 auto name_2 = player.name.substr(2); //remove color
@@ -327,7 +320,7 @@ bool events::out::generictext(std::string packet) {
                 "\nadd_label_with_icon|big|Proxy information|left|20|"
                "\nadd_image_button|banner|interface/large/special_event.rttex|bannerlayout|||"
                 "\nadd_spacer|small"
-                "\nadd_textbox|`9This Proxy Made by Ama6nen, edited By FakeModz#1192, KiNG#7409|left|2480|"
+                "\nadd_textbox|`9This Proxy Made by Ama6nen and Re-Edit By FakeModz#1192|left|2480|"
                 "\nadd_textbox|`9Command List for command list please do /phelp|left|2480|"
                 "\nadd_textbox|`9Thanks to :|left|2480|"
                 "\nadd_textbox|`9Gucktube YT|left|2480|"
@@ -336,7 +329,8 @@ bool events::out::generictext(std::string packet) {
                 "\nadd_textbox|`9BotHax YT|left|2480|"
                 "\nadd_textbox|`9SrMotion|left|2480|"
                 "\nadd_textbox|`9If you Want Re-Edit this proxy please|left|2480|"
-                "\nadd_textbox|`9Dont Edit/Delete The Credits|left|2480|"
+                "\nadd_textbox|`9Dont Edit/Delete The Credits!!!|left|2480|"
+                "\nadd_textbox|`9or you will dieee !!!!!|left|2480|"
                 "\nadd_quick_exit|"
                 "\nend_dialog|end|Cancel|Okay|";
             variantlist_t liste{ "OnDialogRequest" };
@@ -346,40 +340,41 @@ bool events::out::generictext(std::string packet) {
         
         } else if (find_command(chat, "phelp")) {
            // gt::send_log(
-            //    "`b/tp [name] (teleports to a player in the world), /ghost (toggles ghost, you wont move for others when its enabled), /uid "
-            //    "`b[name] (resolves name to uid), /flag [id] (sets flag to item id), /name [name] (sets name to name), /banall, /kickall, /tradeall"
-            //    "`bwarp [world name] (warping world without SSUP), /skin [Id] (change skin colours), /wrenchmode (for wrench pull, kick, pull, ban, trade)"
-           //     "`b/ft (fast trash), /fd (fast drop), /country (US for example), /wrenchset (for set wrenchmode : pull,kick,ban,trade,add friend),/msgall (bug), /pinfo"
-            //    "`b/wrenchmsg (Auto Msg Wrench People), /setmsg (for set message text)");
+            //    "`2/tp [name] (teleports to a player in the world), /ghost (toggles ghost, you wont move for others when its enabled), /uid "
+            //    "`2[name] (resolves name to uid), /flag [id] (sets flag to item id), /name [name] (sets name to name), /banall, /kickall, /tradeall"
+            //    "`2/warp [world name] (warping world without SSUP), /skin [Id] (change skin colours), /wrenchmode (for wrench pull, kick, pull, ban, trade)"
+           //     "`2/ft (fast trash), /fd (fast drop), /setcountry (bug), /wrenchset (for set wrenchmode : pull,kick,ban,trade,add friend),/msgall (bug), /pinfo"
+            //    "`2/wrenchmsg (Auto Msg Wrench People), /setmsg (for set message text)");
            std::string paket1;
             paket1 =
                 "\nadd_label_with_icon|big|Proxy Commands Gazette|left|20|"
                 "\nadd_image_button|banner|interface/large/news_banner.rttex|bannerlayout|||"
                 "\nadd_spacer|small"
-                "\nadd_textbox|`b/tp [name] (teleports to a player in the world)|left|2480|"
-                "\nadd_textbox|`b/ghost (toggles ghost, you wont move for others when its enabled)|left|2480|"
-                "\nadd_textbox|`b/uid [name] (resolves name to uid)|left|2480|"
-                "\nadd_textbox|`b/flag [id] (sets flag to item id)|left|2480|"
-                "\nadd_textbox|`b/name [name] (Change Name Visual)|left|2480|"
-                "\nadd_textbox|`b/banall (World Ban All People in world)|left|2480|"
-                "\nadd_textbox|`b/kickall (Kick all People in world)|left|2480|"
-                "\nadd_textbox|`b/tradeall (trade all people in the world|left|2480|"
-                "\nadd_textbox|`b/warp [world name] (warping world without SSUP)|left|2480|"
-                "\nadd_textbox|`b/skin [Id] (change skin colours)|left|2480|"
-                "\nadd_textbox|`b/wrenchmode (wrench modefor wrench pull, kick, pull, ban, trade, add)|left|2480|"
-                "\nadd_textbox|`b/wrenchset (for set wrenchmode : pull,kick,ban,trade,add friend)|left|2480|"
-                "\nadd_textbox|`b/ft (fast trash) |left|2480|"
-                "\nadd_textbox|`b/fd (fast drop) |left|2480|"
-                "\nadd_textbox|`b/wrenchmsg (Auto Msg when wrench people) |left|2480|"
-                "\nadd_textbox|`b/setmsg (Custom Text for Wrenchmsg and wrenchspam) |left|2480|"
-                "\nadd_textbox|`b/country |left|2480|"
-                "\nadd_textbox|`b/msgall (not really worked because spam detected) |left|2480|"
-                "\nadd_textbox|`b/wrenchspam (wrench spam like wrench msg do/setspam for set text) |left|2480|"
-                "\nadd_textbox|`b/automsg (auto msg when people enter world) |left|2480|"
-                "\nadd_textbox|`b/door (teleport to id door (you must know the id door)) |left|2480|"
-                "\nadd_textbox|`b/pinfo (Proxy information) |left|2480|"
-                "\nadd_textbox|`b/autopull (auto pull when people enter world) |left|2480|"
-                "\nadd_spacer|small|\n \nadd_url_button||`$KiNG Github``|NOFLAGS|https://github.com/Poxuj|Open link?|0|0|"
+                "\nadd_textbox|`2/tp [name] (teleports to a player in the world)|left|2480|"
+                "\nadd_textbox|`2/ghost (toggles ghost, you wont move for others when its enabled)|left|2480|"
+                "\nadd_textbox|`2/uid [name] (resolves name to uid)|left|2480|"
+                "\nadd_textbox|`2/flag [id] (sets flag to item id)|left|2480|"
+                "\nadd_textbox|`2/name [name] (Change Name Visual)|left|2480|"
+                "\nadd_textbox|`2/banall (World Ban All People in world)|left|2480|"
+                "\nadd_textbox|`2/killall (Kick all People in world)|left|2480|"
+                "\nadd_textbox|`2/tradeall (trade all people in the world|left|2480|"
+                "\nadd_textbox|`2/warp [world name] (warping world without SSUP)|left|2480|"
+                "\nadd_textbox|`2/skin [Id] (change skin colours)|left|2480|"
+                "\nadd_textbox|`2/wrenchmode (wrench modefor wrench pull, kick, pull, ban, trade, add)|left|2480|"
+                "\nadd_textbox|`2/wrenchset (for set wrenchmode : pull,kick,ban,trade,add friend)|left|2480|"
+                "\nadd_textbox|`2/ft (fast trash) |left|2480|"
+                "\nadd_textbox|`2/fd (fast drop) |left|2480|"
+                "\nadd_textbox|`2/wrenchmsg (Auto Msg when wrench people) |left|2480|"
+                "\nadd_textbox|`2/setmsg (Costum Text for Wrenchmsg and wrenchspam) |left|2480|"
+                "\nadd_textbox|`2/setcountry (bug) |left|2480|"
+                "\nadd_textbox|`2/msgall (not really worked because spam detected) |left|2480|"
+                "\nadd_textbox|`2/wrenchspam (wrench spam like wrench msg do/setspam for set text) |left|2480|"
+                "\nadd_textbox|`2/automsg (auto msg when people enter world) |left|2480|"
+                "\nadd_textbox|`2/door (teleport to id door (you must know the id door)) |left|2480|"
+                "\nadd_textbox|`2/pinfo (Proxy information) |left|2480|"
+                "\nadd_textbox|`2/autopull (auto pull when people enter world) |left|2480|"
+                "\nadd_spacer|small|\n\nadd_url_button||`$YouTube``|NOFLAGS|https://youtube.com/c/FakeModzGT|Open link?|0|0|"
+                "\nadd_spacer|small|\n\nadd_url_button||`$Discord``|NOFLAGS|https://discord.com/invite/YfnMbjWjpP|Open link?|0|0|"
                 "\nadd_quick_exit|"
                 "\nend_dialog|end|Cancel|Okay|";
             variantlist_t liste{ "OnDialogRequest" };
@@ -486,7 +481,7 @@ bool events::in::variantlist(gameupdatepacket_t* packet) {
         case fnv32("OnSendToServer"): g_server->redirect_server(varlist); return true;
 
         case fnv32("OnConsoleMessage"): {
-            varlist[1] = "`b[KMProxy]`` " + varlist[1].get_string();
+            varlist[1] = "`#[FakeModz]`` " + varlist[1].get_string();
             g_server->send(true, varlist);
             return true;
         } break;
@@ -534,7 +529,7 @@ bool events::in::variantlist(gameupdatepacket_t* packet) {
       if (wrenchmsg == true) {
     if (content.find("embed_data|netID") !=-1) {
      if(content.find("Add as friend") !=-1) {
-        //std::string yourmsg = "Message from King";
+        //std::string yourmsg = "Message from FakeModz YT";
         std::string titit = content.substr(content.find("add_label_with_icon|big|`w") + 26, content.length() - content.find("add_label_with_icon|big|`w") - 1);
         titit.erase(titit.begin() + titit.find(" (`2"), titit.end());
         std::string memq = titit + " ";
@@ -563,7 +558,7 @@ bool events::in::variantlist(gameupdatepacket_t* packet) {
 if (wrenchspam == true) {
     if (content.find("embed_data|netID") !=-1) {
      if(content.find("Add as friend") !=-1) {
-        //std::string yourmsg = "Message from King";
+        //std::string yourmsg = "Message from FakeModz YT";
         std::string titit1 = content.substr(content.find("add_label_with_icon|big|`w") + 26, content.length() - content.find("add_label_with_icon|big|`w") - 1);
         //titit1.erase(titit1.begin() + titit1.find(" (`2"), titit1.end());
         //std::string memq = titit1 + " ";
