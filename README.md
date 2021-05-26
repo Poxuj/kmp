@@ -1,4 +1,4 @@
-#Growtopia KMProxy
+*Growtopia KMProxy
 
 Credits : 
 
@@ -17,8 +17,11 @@ apt update
 
  apt install git build-essential -y
 
-git clone https://github.com/Poxuj/kmp​
-cd enetproxy
+git clone https://github.com/Poxuj/kmp
+​
+cd kmp
+
+cd ls
 
 bash build.sh
 
