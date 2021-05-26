@@ -1,4 +1,4 @@
-$Growtopia KMProxy
+&Growtopia KMProxy
 
 Credits : 
 
