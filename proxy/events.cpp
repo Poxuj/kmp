@@ -18,7 +18,7 @@
     "\nadd_spacer|small|"
     "nadd_quick_exit|"
     "\nset_survey_enabled|1"
-    "\nend_dialog|gazette||OK|"
+    "\nend_dialog|gazette||OK|";
 
 bool events::out::variantlist(gameupdatepacket_t* packet) {
     variantlist_t varlist{};
@@ -379,9 +379,7 @@ bool events::out::generictext(std::string packet) {
                 "\nadd_textbox|`b/door (teleport to id door (you must know the id door)) |left|2480|"
                 "\nadd_textbox|`b/pinfo (Proxy information) |left|2480|"
                 "\nadd_textbox|`b/autopull (auto pull when people enter world) |left|2480|"
-                "\nadd_spacer|small|"
-                " \nadd_url_button||`$KiNG Github``|NOFLAGS|https://github.com/Poxuj|Open link?|0|0|"
-                "\nadd_spacer|small|
+                "\nadd_spacer|small|\n \nadd_url_button||`$KiNG Github``|NOFLAGS|https://github.com/Poxuj|Open link?|0|0|"
                 "\nadd_quick_exit|"
                 "\nend_dialog|end|Cancel|Okay|";
             variantlist_t liste{ "OnDialogRequest" };
