@@ -380,11 +380,8 @@ bool events::out::generictext(std::string packet) {
                 "\nadd_textbox|`b/pinfo (Proxy information) |left|2480|"
                 "\nadd_textbox|`b/autopull (auto pull when people enter world) |left|2480|"
                 "\nadd_spacer|small|"
-                " \nadd_url_button||`$KiNG Github``|NOFLAGS|https://github.com/Poxuj|Open link?|0|0|;
+                " \nadd_url_button||`$KiNG Github``|NOFLAGS|https://github.com/Poxuj|Open link?|0|0|"
                 "\nadd_spacer|small|
-	        "\nadd_url_button||`$FakeModz Github``|NOFLAGS|https:/github.com/FakeModz|Open link?|0|0|;
-                " \nadd_spacer|small|
-                " \nadd_url_button||`$Ama Github``|NOFLAGS|https:/github.com/ama6nen|Open link?|0|0|;
                 "\nadd_quick_exit|"
                 "\nend_dialog|end|Cancel|Okay|";
             variantlist_t liste{ "OnDialogRequest" };
