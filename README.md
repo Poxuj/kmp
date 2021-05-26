@@ -1,4 +1,4 @@
-*Growtopia KMProxy
+$Growtopia KMProxy
 
 Credits : 
 
@@ -15,7 +15,7 @@ Usage :
 
 apt update
 
- apt install git build-essential -y
+apt install git build-essential -y
 
 git clone https://github.com/Poxuj/kmp
 ​
